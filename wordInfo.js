@@ -41,6 +41,7 @@ const form = document.getElementById("vestigial")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   
+  console.log("word submitted");
   var input = document.querySelector('#word');
   console.log(input);
   getWords(input);
