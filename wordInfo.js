@@ -32,8 +32,11 @@ async function getWords(wordToRhyme) {
   // console.log(Array.from(resultsContainer.childNodes));
 
   resultsContainer.replaceChildren();
-  resultsContainer.appendChild(rhymeResultsElems.slice(0, 10));
-  
+  let results = rhymeResultsElems.slice(0, 10);
+  results.forEach((result) => {
+    resultsContainer.appendChild(result);
+  })
+  console.log(...results);
   sizeTheWords();
 }
 
@@ -47,4 +50,4 @@ form.addEventListener("submit", (event) => {
 
   console.log(input.value);
   getWords(input.value);
-})
+});
