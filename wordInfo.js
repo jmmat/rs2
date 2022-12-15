@@ -29,7 +29,7 @@ async function getWords(wordToRhyme) {
   });
   const resultsContainer = document.getElementById("results");
   // console.log(Array.from(resultsContainer.childNodes));
-  
+
   resultsContainer.replaceChildren();
   resultsContainer.append(...rhymeResultsElems.slice(0, 10));
   sizeTheWords();
@@ -41,7 +41,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   
   console.log("word submitted");
-  var input = document.querySelector('word');
+  var input = document.querySelector('#word');
   console.log(input);
   getWords(input);
 })
