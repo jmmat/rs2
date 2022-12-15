@@ -14,6 +14,7 @@ async function getWords(wordToRhyme) {
   const rhymeResults = await fetch(`https://rhymebrain.com/talk?function=getRhymes&word=${wordToRhyme}`);
   const rhymeResultsJson = await rhymeResults.json();
   console.log(rhymeResultsJson);
+  
   let rhymeResultsElems = rhymeResultsJson.map((rhymeWord) => {
     const resultElem = document.createElement("div");
     resultElem.classList.add("result");
