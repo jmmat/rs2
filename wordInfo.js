@@ -32,27 +32,7 @@ async function getWords(wordToRhyme) {
   // console.log(Array.from(resultsContainer.childNodes));
 
   resultsContainer.replaceChildren();
-  rhymeResultsElems = rhymeResultsElems.slice(0, 10);
-
-  let dlist = document.createElement('dl');
-
-  rhymeResultsElems.forEach((rhyme) => {
-    console.log(rhyme);
-    let wordInfo = fetch(`https://rhymebrain.com/talk?function=getWordInfo&word=${rhyme}`);
-    let wordInfoJson = wordInfo.json()
-    let dt = document.createElement('dt');
-    let dd = document.createElement('dd');
-    let text1 = document.createTextNode(`${rhyme.word}`);
-    let text2 = document.createTextNode(`${wordInfoJson}`);
-    console.log(wordInfoJson);
-    dt.appendChild(text1);
-    dd.appendChild(text2);
-    dlist.appendChild(dt);
-    dlist.appendChild(dd);
-  });
-
-
-  resultsContainer.appendChild(dlist);
+  resultsContainer.appendChild(...rhymeResultsElems.slice(0, 10));
   sizeTheWords();
 }
 
