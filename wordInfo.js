@@ -14,7 +14,7 @@ async function getWords(wordToRhyme) {
   const rhymeResults = await fetch(`https://rhymebrain.com/talk?function=getRhymes&word=${wordToRhyme}`);
   const rhymeResultsJson = await rhymeResults.json();
   console.log(rhymeResultsJson);
-  const rhymeResultsElems = rhymeResultsJson.map((rhymeWord) => {
+  let rhymeResultsElems = rhymeResultsJson.map((rhymeWord) => {
     const resultElem = document.createElement("div");
     resultElem.classList.add("result");
     if (rhymeWord.score >= 300) {
