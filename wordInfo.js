@@ -36,12 +36,12 @@ async function getWords(wordToRhyme) {
   sizeTheWords();
 }
 
-const form = document.getElementById("vestigal")
+const form = document.getElementById("vestigial")
 
 form.addEventListener("text", (event) => {
   event.preventDefault();
   
-  var input = "brother";
+  var input = document.querySelector('#word');
   console.log(input.value);
   getWords(input.value);
 })
