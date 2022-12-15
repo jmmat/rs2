@@ -42,6 +42,6 @@ form.addEventListener("submit", (event) => {
   
   console.log("word submitted");
   var input = document.querySelector('#word');
-  console.log(input);
-  getWords(input);
+  console.log(input.value);
+  getWords(input.value);
 })
