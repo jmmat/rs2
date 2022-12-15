@@ -21,7 +21,7 @@ async function getWords(wordToRhyme) {
       resultElem.classList.add("perfect");
     } else {
       resultElem.classList.add("imperfect");
-    }
+    } 
     resultElem.dataset.score = rhymeWord.score;
     // resultElem.innerText = rhymeWord.word;
     resultElem.append(rhymeWord.word);
