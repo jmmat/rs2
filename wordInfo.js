@@ -38,12 +38,13 @@ async function getWords(wordToRhyme) {
 
   rhymeResultsElems.forEach((rhyme) => {
     console.log(rhyme);
-    let wordInfo = fetch(`https://rhymebrain.com/talk?function=getWordInfo&word=${rhyme}`).json();
+    let wordInfo = fetch(`https://rhymebrain.com/talk?function=getWordInfo&word=${rhyme}`);
+    let wordInfoJson = wordInfo.json()
     let dt = document.createElement('dt');
     let dd = document.createElement('dd');
     let text1 = document.createTextNode(`${rhyme.word}`);
-    let text2 = document.createTextNode(`${wordInfo}`);
-    console.log(wordInfo);
+    let text2 = document.createTextNode(`${wordInfoJson}`);
+    console.log(wordInfoJson);
     dt.appendChild(text1);
     dd.appendChild(text2);
     dlist.appendChild(dt);
