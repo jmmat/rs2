@@ -38,7 +38,7 @@ async function getWords(wordToRhyme) {
 
 const form = document.getElementById("vestigial")
 
-form.addEventListener("text", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
   
   var input = document.querySelector('#word');
