@@ -41,7 +41,7 @@ const form = document.getElementById("vestigal")
 form.addEventListener("text", (event) => {
   event.preventDefault();
   
-  var input = document.querySelector('query');
+  var input = "brother";
   console.log(input.value);
   getWords(input.value);
 })
