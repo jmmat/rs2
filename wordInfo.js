@@ -36,34 +36,6 @@ async function getWords(wordToRhyme) {
   sizeTheWords();
 }
 
-async function begin() {
-  const rhymeResults = await fetch("https://rhymebrain.com/talk?function=getRhymes&word=hello");
-  const rhymeResultsJson = await rhymeResults.json();
-  console.log(rhymeResultsJson);
-  const rhymeResultsElems = rhymeResultsJson.map((rhymeWord) => {
-    const resultElem = document.createElement("div");
-    resultElem.classList.add("result");
-    if (rhymeWord.score >= 300) {
-      resultElem.classList.add("perfect");
-    } else {
-      resultElem.classList.add("imperfect");
-    }
-    resultElem.dataset.score = rhymeWord.score;
-    // resultElem.innerText = rhymeWord.word;
-    resultElem.append(rhymeWord.word);
-    return resultElem;
-  });
-  const resultsContainer = document.getElementById("results");
-  // console.log(Array.from(resultsContainer.childNodes));
-  Array.from(resultsContainer.childNodes).forEach((child) => {
-    child.remove();
-  });
-  resultsContainer.append(...rhymeResultsElems.slice(0, 10));
-  sizeTheWords();
-}
-
-begin();
-
 const form = document.getElementById("vestigal")
 
 form.addEventListener("submit", (event) => {
