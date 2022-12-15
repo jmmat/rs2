@@ -32,7 +32,7 @@ async function getWords(wordToRhyme) {
   // console.log(Array.from(resultsContainer.childNodes));
 
   resultsContainer.replaceChildren();
-  resultsContainer.appendChild(...rhymeResultsElems.slice(0, 10));
+  resultsContainer.appendChild(rhymeResultsElems.slice(0, 10));
   sizeTheWords();
 }
 
