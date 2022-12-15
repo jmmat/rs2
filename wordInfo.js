@@ -31,7 +31,24 @@ async function getWords(wordToRhyme) {
   // console.log(Array.from(resultsContainer.childNodes));
 
   resultsContainer.replaceChildren();
-  resultsContainer.append(...rhymeResultsElems.slice(0, 10));
+  rhymeResultsElems = rhymeResultsElems.slice(0, 10);
+
+  let dlist = document.createElement('dl');
+
+  rhymeResultsElems.forEach((rhyme) => {
+    let wordInfo = fetch(`https://rhymebrain.com/talk?function=getWordInfo&word=${rhyme}`);
+    let dt = document.createElement('dt');
+    let dd = document.createElement('dd');
+    let text1 = document.createTextNode(`${rhyme}`);
+    let text2 = document.createTextNode(`${wordInfo}`);
+    dt.appendChild(text1);
+    dd.appendChild(text2);
+    dlist.appendChild(dt);
+    dlist.appendChild(dd);
+  });
+
+
+  resultsContainer.appendChild(dlist);
   sizeTheWords();
 }
 
@@ -42,7 +59,7 @@ form.addEventListener("submit", (event) => {
   
   console.log("word submitted");
   var input = document.querySelector('#word');
-  
+
   console.log(input.value);
   getWords(input.value);
 })
