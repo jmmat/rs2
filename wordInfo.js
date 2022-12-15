@@ -33,6 +33,7 @@ async function getWords(wordToRhyme) {
 
   resultsContainer.replaceChildren();
   resultsContainer.appendChild(rhymeResultsElems.slice(0, 10));
+  
   sizeTheWords();
 }
 
