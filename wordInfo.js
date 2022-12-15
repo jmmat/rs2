@@ -42,5 +42,6 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   
   var input = document.querySelector('query');
+  console.log(input.value);
   getWords(input.value);
 })
