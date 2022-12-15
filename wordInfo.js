@@ -29,6 +29,7 @@ async function getWords(wordToRhyme) {
   });
   const resultsContainer = document.getElementById("results");
   // console.log(Array.from(resultsContainer.childNodes));
+  
   resultsContainer.replaceChildren();
   resultsContainer.append(...rhymeResultsElems.slice(0, 10));
   sizeTheWords();
