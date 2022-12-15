@@ -37,11 +37,13 @@ async function getWords(wordToRhyme) {
   let dlist = document.createElement('dl');
 
   rhymeResultsElems.forEach((rhyme) => {
+    console.log(rhyme);
     let wordInfo = fetch(`https://rhymebrain.com/talk?function=getWordInfo&word=${rhyme}`);
     let dt = document.createElement('dt');
     let dd = document.createElement('dd');
     let text1 = document.createTextNode(`${rhyme}`);
     let text2 = document.createTextNode(`${wordInfo}`);
+    console.log(wordInfo);
     dt.appendChild(text1);
     dd.appendChild(text2);
     dlist.appendChild(dt);
